@@ -8,9 +8,9 @@ VALUES
 `
 const GetPosts = `
 SELECT
-    *
-FROM 
-    posts
+	*
+FROM
+	posts
 `
 const GetPostsCategory = `
 SELECT

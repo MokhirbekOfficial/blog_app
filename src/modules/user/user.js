@@ -4,7 +4,7 @@ module.exports = {
     getPosts: async(req, res) => {
         try {
             let allPosts = await getPosts()
-            res.status(200).send(allPosts)
+            res.status(200).send(allPosts.reverse())
         } catch(e) {
             console.log(e.message)
             res.status(405).json(e.message)

@@ -36,7 +36,7 @@ CREATE TABLE posts (
         ON DELETE CASCADE
 );
 
-INSERT INTO posts(post_title,post_content,post_img,post_owner,post_category) VALUES('Obu-havo', 'Harorat keskin ortishi kutilmoqda','https://obhavo.uz/images/preview-logo-uz.png','ae7abc8b-6276-4af3-ad22-f7943963754a','70f9c4f7-0482-4064-8f41-1e24cf06064b');
+INSERT INTO posts(post_title,post_content,post_img,post_owner,post_category) VALUES('Obu-havo juda muhimlari', 'Harorat keskin ortishi kutilmoqda','https://obhavo.uz/images/preview-logo-uz.png','ae7abc8b-6276-4af3-ad22-f7943963754a','70f9c4f7-0482-4064-8f41-1e24cf06064b');
 
 CREATE TABLE users (
     user_id uuid DEFAULT uuid_generate_v4() NOT NULL PRIMARY KEY,
@@ -49,3 +49,10 @@ CREATE TABLE users (
 );
 
 INSERT INTO users(user_name, user_tel, user_category) VALUES('Iskandarov Mokhirbek', 998909032818, '70f9c4f7-0482-4064-8f41-1e24cf06064b');
+
+SELECT
+	*
+FROM
+	posts
+ORDER BY
+	post_time DESC
