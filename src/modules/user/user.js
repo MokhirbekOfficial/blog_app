@@ -1,4 +1,4 @@
-const {addUser, getPosts, getPostsCategory} = require('./model')
+const {addUser, getPosts, getPostsCategory,getPostsDate} = require('./model')
 
 module.exports = {
     getPosts: async(req, res) => {
@@ -15,6 +15,16 @@ module.exports = {
             let {post_category} = req.body
             let postsWithCategory = await getPostsCategory(post_category)
             res.status(201).send(postsWithCategory)
+        } catch(e) {
+            console.log(e.message)
+            res.status(405).json(e.message)
+        }
+    },
+    getPostsDate: async(req, res) => {
+        try {
+            let {post_date} = req.body
+            let postsWithDate = await getPostsDate(post_date)
+            res.status(201).send(postsWithDate)
         } catch(e) {
             console.log(e.message)
             res.status(405).json(e.message)

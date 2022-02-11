@@ -26,6 +26,7 @@ CREATE TABLE posts (
     post_content text NOT NULL,
     post_img text,
     post_time timestamptz DEFAULT CURRENT_TIMESTAMP,
+    post_date DATE DEFAULT CURRENT_DATE,
     post_owner uuid NOT NULL,
     post_category uuid NOT NULL,
     FOREIGN KEY (post_owner)
@@ -49,10 +50,3 @@ CREATE TABLE users (
 );
 
 INSERT INTO users(user_name, user_tel, user_category) VALUES('Iskandarov Mokhirbek', 998909032818, '70f9c4f7-0482-4064-8f41-1e24cf06064b');
-
-SELECT
-	*
-FROM
-	posts
-ORDER BY
-	post_time DESC

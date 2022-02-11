@@ -20,13 +20,23 @@ FROM
 WHERE
     post_category = $1
 `
+const GetPostsDate = `
+SELECT
+    *
+FROM 
+    posts
+WHERE
+    post_date = $1
+`
 const addUser = (user_name,user_tel,user_category) => fetch(AddUser,user_name,user_tel,user_category)
 const getPosts = () => fetchAll(GetPosts)
 const getPostsCategory = (post_category) => fetchAll(GetPostsCategory,post_category)
+const getPostsDate = (post_date) => fetchAll(GetPostsDate,post_date)
 
 
 module.exports = {
     addUser,
     getPosts,
-    getPostsCategory
+    getPostsCategory,
+    getPostsDate
 }

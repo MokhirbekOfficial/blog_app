@@ -7,7 +7,7 @@ const token = require('./token/token')
 const user = require('./user/user')
 router
     .get('/posts', user.getPosts)
-    .get('/superadmin', superAdmin.allAdmin)
+    .get('/alladmin', superAdmin.allAdmin)
 
     .post('/admin', admin.adminChecker)
     .post('/superadmin', superAdmin.addAdmin)
@@ -17,7 +17,9 @@ router
     .post('/admin/addpost', admin.addPost)
     .post('/admin/getposts', admin.adminPosts)
     .post('/user/adduser', user.addUser)
-    .post('/posts/filter', user.getPostsCategory)
+    .post('/posts/category', user.getPostsCategory)
+    .post('/posts/date', user.getPostsDate)
+
 
     .put('/admin/categories', admin.updateCategory)
     .put('/admin/posts', admin.updatePost)
